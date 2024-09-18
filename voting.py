@@ -1,18 +1,19 @@
 print("Welcome to the Voting Machine!")
-name = input("Enter the your name: ")
-Id = float(input("Enter your voter Id: "))
+
 bjp_votes = 0
 congress_votes = 0
 total_voters = 0
 
 while total_voters < 10:
     print("Voter", total_voters + 1)
+    name = input("Enter the your name: ")
+    Id = float(input("Enter your voter Id: "))
     age = int(input("Enter your age: "))
 
     if age < 18:
-        print("You can't vote")
+        print("You can't vote.Age must be 18 or above.")
         continue
-    
+
     else:
         print("You can vote!")
         print("Choose your party:")
@@ -22,14 +23,16 @@ while total_voters < 10:
         choice = input("Enter your choice (1/2): ")
         if choice == "1":
             print("You voted for the BJP. Thank you!")
+            bjp_votes += 1
         elif choice == "2":
             print("You voted for the Congress. Thank you!")
+            congress_votes += 1
         else:
             print("Invalid choice. Please select 1 for BJP or 2 for Congress.")
         
         total_voters += 1
 
-    print("Voting has ended!")
+    print("\nVoting has ended!")
     print("Total votes for BJP", bjp_votes)
     print("Total votes for congress:", congress_votes)
 
